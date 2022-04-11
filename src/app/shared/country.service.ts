@@ -9,30 +9,30 @@ import { Country } from '../country';
 export class CountryService {
   private country: Country;
   private baseUrl: string = 'https://mean-crud-app-umar.herokuapp.com';
-  //private baseUrl: string = '';
+  //private baseUrl: string = 'localhost:8080';
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private http: HttpClient) {}
 
   createCountry(country: Country) {
-    return this.http.post(this.baseUrl + '/create', country, {
+    return this.http.post(this.baseUrl + '/', country, {
       headers: this.headers,
     });
   }
 
   readCountries() {
-    return this.http.get(this.baseUrl + '/read', {
+    return this.http.get(this.baseUrl + '/', {
       headers: this.headers,
     });
   }
 
   updateCountry(country: Country) {
-    return this.http.put(this.baseUrl + '/update', country, {
+    return this.http.put(this.baseUrl + '/', country, {
       headers: this.headers,
     });
   }
 
   daleteCountry(id: string) {
-    return this.http.delete(this.baseUrl + '/delete/' + id, {
+    return this.http.delete(this.baseUrl + '/' + id, {
       headers: this.headers,
     });
   }
