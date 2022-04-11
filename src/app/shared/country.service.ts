@@ -8,19 +8,19 @@ import { Country } from '../country';
 })
 export class CountryService {
   private country: Country;
-  private baseUrl: string = 'localhost:3000';
+  private baseUrl: string = 'http://localhost:8080';
   //private baseUrl: string = 'localhost:8080';
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private http: HttpClient) {}
 
   createCountry(country: Country) {
-    return this.http.post(this.baseUrl + '/create', country, {
+    return this.http.post(this.baseUrl + '/', country, {
       headers: this.headers,
     });
   }
 
   readCountries() {
-    return this.http.get(this.baseUrl + '/read', {
+    return this.http.get(this.baseUrl + '/', {
       headers: this.headers,
     });
   }
