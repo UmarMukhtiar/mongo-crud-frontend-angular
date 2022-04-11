@@ -8,8 +8,8 @@ import { Country } from '../country';
 })
 export class CountryService {
   private country: Country;
-  private baseUrl: string = 'http://localhost:8080';
-  //private baseUrl: string = 'localhost:8080';
+  //private baseUrl: string = 'http://localhost:8080';
+  private baseUrl: string = 'https://mean-crud-backend-umar.herokuapp.com';
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private http: HttpClient) {}
 
