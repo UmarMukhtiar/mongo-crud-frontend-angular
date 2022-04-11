@@ -5,6 +5,6 @@ app.use(express.static(__dirname + "/dist/mean-client"));
 app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname + "/dist/mean-client/index.html"));
 });
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT || 3100, () => {
   console.log("running!");
 });
